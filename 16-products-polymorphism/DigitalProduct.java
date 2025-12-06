@@ -31,7 +31,11 @@ public class DigitalProduct extends Product {
         this.fileName = fileName;
     }
 
-
+    @Override
+    public String toString() {
+        return super.toString() +  " file format: " + fileFormat +
+         " filename: " + fileName;
+    }
 
 
 }

@@ -41,6 +41,15 @@ public class PhysicalProduct extends Product {
         this.size = size;
     }
 
+    // method overriding
+    // the child class has the same method as the parent
+    // if polymorphism happens, Java will use the child class method instead
+    @Override
+    public String toString() {
+        return super.toString() +  " size: " + size +
+          " color: " + color +
+          " weight " + weight;
+    }
 
 
 

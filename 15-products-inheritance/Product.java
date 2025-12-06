@@ -1,4 +1,4 @@
-public class Product {
+public class Product extends Object {
     private String name;
     private String sku;
     private double price;
@@ -49,6 +49,7 @@ public class Product {
         
     }
 
+    // @Override
     public String toString() {
         return name + ", " + sku + ", $" + price;
     }

@@ -30,8 +30,11 @@ public class Main {
             if (choice == 2) {
                 displayProducts();
             }
+            if (choice==3) {
+                editProduct();
+            }
             // choice 3 is quit
-            if (choice == 3) {
+            if (choice == 4) {
                 break;
             }
         }
@@ -44,12 +47,13 @@ public class Main {
         while (true) {
             System.out.println("1. Add a product");
             System.out.println("2. List all products");
-            System.out.println("3. Exit");
+            System.out.println("3. Edit Product");
+            System.out.println("4. Exit");
 
             System.out.println("Enter your choice: ");
             choice = sc.nextInt();
             sc.nextLine(); // clear the input buffer
-            if (choice >= 1 && choice <= 3) {
+            if (choice >= 1 && choice <= 4) {
                 break;
             }
         }
@@ -106,8 +110,26 @@ public class Main {
 
     private static void displayProducts() {
         System.out.println("Display All Products");
-        for (Product p : productList) {
+        System.out.println("-------------------------");
+        for (int i = 0; i < productList.size(); ++i) {
+            Product p = productList.get(i);
+         
+            // print will not push the cursor to the next line
+            System.out.print(i+". ");
+            // When we print out an object, it's toString method is called automatically
             System.out.println(p);
         }
+        System.out.println();
+    }
+
+    private static void editProduct() {
+        // display all the products
+        displayProducts();
+
+        // the user will select one to edit
+        int productIndexToEdit = sc.nextInt();
+        
+        // we display the edit portion for the product
+        Product productToEdit = productList.get(productIndexToEdit);
     }
 }
